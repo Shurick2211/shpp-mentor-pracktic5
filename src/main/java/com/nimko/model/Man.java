@@ -8,8 +8,11 @@ public class Man {
 
     private Man() {}
 
-    public String say(){
+    public String sayHello(){
         return role == null ? "Я "+ name :"Я " + name + role.roleSpeak();
+    }
+    public String sayGoodBay(){
+        return "Я " + name + ". Пока-пока!";
     }
 
     public Role getRole() {

@@ -18,8 +18,7 @@ public class MainLogic {
     private final  List<String> names = List.of("Саша", "Маша", "Вася", "Соня", "Сергій", "Наташа", "Іван");
     private final List<Role> roles = List.of(new Client(), new Security(), new Sales());
     private final Random random = new Random();
-
-    private final int NUM_PEOPLE = 20;
+    public static final int NUM_PEOPLE = 20;
     private final SuperMarket market;
     public MainLogic() {
         market = SuperMarket.getInstance();
@@ -33,15 +32,22 @@ public class MainLogic {
                 .build();
     }
 
-    public void action() {
+    public MainLogic startAction() {
         market.getPeople().stream()
                 .filter(p -> p.getRole().getClass().equals(Security.class))
-                .forEach(p -> log.info(p.say()));
+                .forEach(p -> log.info(p.sayHello()));
         market.getPeople().stream()
                 .filter(p -> p.getRole().getClass().equals(Client.class))
-                .forEach(p -> log.info(p.say()));
+                .forEach(p -> log.info(p.sayHello()));
         market.getPeople().stream()
                 .filter(p -> p.getRole().getClass().equals(Sales.class))
-                .forEach(p -> log.info(p.say()));
+                .forEach(p -> log.info(p.sayHello()));
+        return this;
+    }
+
+    public void endAction(){
+        market.getPeople().stream()
+                .filter(p -> p.getRole().getClass().equals(Client.class))
+                .forEach(p -> log.info(p.sayGoodBay()));
     }
 }
