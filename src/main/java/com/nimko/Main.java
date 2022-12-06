@@ -1,11 +1,16 @@
 package com.nimko;
 
+import com.nimko.model.Man;
+import com.nimko.model.SuperMarket;
+import com.nimko.role.Security;
+import com.nimko.services.MainLogic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class Main {
-    private static final Logger log = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
-        log.info("Hi!");
+        MainLogic logic = new MainLogic();
+        logic.action();
     }
 }
