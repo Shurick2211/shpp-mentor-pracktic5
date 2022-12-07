@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SuperMarket {
-    private final List<Man> people;
+    private final List<Person> people;
     private static SuperMarket superMarket;
 
     private SuperMarket() {
@@ -15,11 +15,11 @@ public class SuperMarket {
         return superMarket == null ? superMarket = new SuperMarket(): superMarket;
     }
 
-    public void addPerson(Man man){
-        people.add(man);
+    public void addPerson(Person person){
+        people.add(person);
     }
 
-    public List<Man> getPeople() {
+    public List<Person> getPeople() {
         return people;
     }
 

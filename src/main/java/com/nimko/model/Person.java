@@ -2,11 +2,11 @@ package com.nimko.model;
 
 import com.nimko.role.Role;
 
-public class Man {
+public class Person {
     private String name;
     private Role role;
 
-    private Man() {}
+    private Person() {}
 
     public String sayHello(){
         return role == null ? "Я "+ name :"Я " + name + role.roleSpeak();
@@ -20,23 +20,23 @@ public class Man {
     }
 
     public static class Builder{
-        private final Man man;
+        private final Person person;
         public Builder(){
-            man = new Man();
+            person = new Person();
         }
 
         public Builder name(String name){
-            man.name = name;
+            person.name = name;
             return this;
         }
 
         public Builder role(Role role){
-            man.role = role;
+            person.role = role;
             return this;
         }
 
-        public Man build(){
-            return man;
+        public Person build(){
+            return person;
         }
     }
 }

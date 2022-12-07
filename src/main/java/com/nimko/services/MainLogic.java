@@ -1,6 +1,6 @@
 package com.nimko.services;
 
-import com.nimko.model.Man;
+import com.nimko.model.Person;
 import com.nimko.model.SuperMarket;
 import com.nimko.role.Client;
 import com.nimko.role.Role;
@@ -25,8 +25,8 @@ public class MainLogic {
         Stream.generate(this::generateMan)
                 .limit(NUM_PEOPLE).forEach(market::addPerson);
     }
-    private Man generateMan(){
-        return new Man.Builder()
+    private Person generateMan(){
+        return new Person.Builder()
                 .name(names.get(random.nextInt(names.size())))
                 .role(roles.get(random.nextInt(roles.size())))
                 .build();
